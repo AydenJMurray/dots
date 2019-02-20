@@ -357,7 +357,7 @@ tail = true
 type = custom/script
 interval = 1
 format-prefix = " "
-format = <label>
+format = %{A1:i3-msg -t command [class="Spotify"] focus:}<label>%{A}
 exec = python $HOME/.config/polybar/scripts/spotibar.py -f '{artist}: {song}'
 format-underline = #1db954
 
