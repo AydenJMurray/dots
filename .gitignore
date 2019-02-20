@@ -1,0 +1,12 @@
+# Ignore everything!
+*
+
+# Except these things
+!README.md
+!.gitignore
+!.vimrc
+!.config/polybar/**
+!.config/i3/**
+!.config/neofetch/**
+!.config/fish/**
+
