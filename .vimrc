@@ -45,3 +45,6 @@ set title
 set ruler
 set showmatch
 
+set modeline
+set modelines=5
+

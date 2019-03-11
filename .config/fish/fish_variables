@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_efish:vim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_evim:vim\x20\x7e/\x2evimrc
 SETUVAR _fish_abbr_ga:git\x20add
@@ -10,6 +12,7 @@ SETUVAR _fish_abbr_gco:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gl:git\x20log
 SETUVAR _fish_abbr_gs:git\x20status
+SETUVAR _fish_abbr_polyconf:vim\x20\x7e/\x2econfig/polybar/config
 SETUVAR _fish_abbr_sfish:source\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_sourceyocto:bass\x20source\x20/opt/dey/2\x2e2\x2dr3/environment\x2dsetup\x2dcortexa7hf\x2dneon\x2ddey\x2dlinux\x2dgnueabi
 SETUVAR _fish_abbr_svim:vim\x20\x2b\x22source\x20\x7e/\x2evimrc\x22\x20\x2bqall

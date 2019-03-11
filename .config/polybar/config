@@ -15,11 +15,14 @@
 ;   The README contains alot of information
 ;
 ;==========================================================
-[bar/top]
 
 enable-ipc = true
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+[bar/top]
+
+
 
 monitor = LVDS-1
 width = 100%
@@ -70,8 +73,10 @@ font-5 = Termsyn:size=8:antialias=false;2
 
 
 modules-left = i3
-modules-right = info-hackspeed cpu memory
+modules-right = info-hackspeed cpu temp memory
 modules-center = spotify-info
+
+
 [module/backlight]
 type = internal/backlight
 card = acpi_video0
@@ -292,7 +297,7 @@ ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-label-disconnected =  Not connected
+label-disconnected =   Not connected
 label-disconnected-foreground = #66
 
 ramp-signal-0 = 
@@ -300,6 +305,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
+ramp-signal-5 = 
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c
@@ -332,14 +338,14 @@ ramp-volume-2 = 
 ramp-volume-3 = 
 
 [module/powermenu]
-type = custom/menu
+type = custom/script
 
-format-padding = 5
+format-padding = 3
+exec = echo "  "
 
-label-open = 
-label-close = 
+click-left = xfce4-session-logout & 
 
-menu-0-0-exec = xfce-session-logout
+
 [module/clock]
 type = internal/date
 interval = 2
@@ -361,4 +367,21 @@ format = %{A1:i3-msg -t command [class="Spotify"] focus:}<label>%{A}
 exec = python $HOME/.config/polybar/scripts/spotibar.py -f '{artist}: {song}'
 format-underline = #1db954
 
-; vim:ft=dosii
+[module/temp]
+type=internal/temperature
+
+interval = 0.5
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+warm-temperature=60
+
+units = true
+
+format = <label>
+format-warn = <label-warn>
+
+label = %temperature-c%
+
+label-warn = %temperature-c%
+label-warn-foreground = #f00
+
+;vim:ft=dosini

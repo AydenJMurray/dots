@@ -5,6 +5,7 @@
 !README.md
 !.gitignore
 !.vimrc
+!.config/betterlockscreenrc
 !.config/polybar/**
 !.config/i3/**
 !.config/neofetch/**

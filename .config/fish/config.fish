@@ -4,7 +4,8 @@
 set -x FLUTTER_HOME /home/ayden/development/flutter/bin
 set -x ANDROID_HOME /home/ayden/Android/Sdk
 set -x ANDROID_STUDIO_HOME /home/ayden/development/android-studio/bin
-set -x PATH $PATH $FLUTTER_HOME $ANDROID_HOME $ANDROID_STUDIO_HOME
+set -x ARDUINO_IDE /home/ayden/Downloads/src/arduino-1.8.8
+set -x PATH $PATH  $FLUTTER_HOME $ANDROID_HOME $ANDROID_STUDIO_HOME
 
 set magenta (set_color magenta)
 set yellow (set_color yellow)
@@ -36,7 +37,8 @@ alias sinstall='sudo apt install'
 #Easier dotfile tracking with Git
 alias dots='git --git-dir=$HOME/.dots.git/ --work-tree=$HOME'
 
-abbr -a sourceyocto 'bass source /opt/dey/2.2-r3/environment-setup-cortexa7hf-neon-dey-linux-gnueabi'
+#alias arduino='/home/ayden/Downloads/src/arduino-1.8.8/arduino'
+
 
 # Easily edit and source this file
 abbr -a efish 'vim ~/.config/fish/config.fish'
@@ -46,6 +48,8 @@ abbr -a sfish 'source ~/.config/fish/config.fish'
 abbr -a evim 'vim ~/.vimrc'
 abbr -a svim 'vim +"source ~/.vimrc" +qall'
 
+# Easily edit polybar config
+abbr -a polyconf 'vim ~/.config/polybar/config'
 # Git aliases
 abbr -a ga git add
 abbr -a gco git commit -m

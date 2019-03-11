@@ -1,8 +1,4 @@
-#i3-gaps setup
-for_window [class="^.*"] border pixel 0
-smart_gaps on
-gaps inner 10 
-gaps outer 10
+
 
 #load polybar
 
@@ -36,7 +32,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # Remapped to win+space, quite liked that combo for Spotlight search on mac
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec rofi -show run
 
 # For use with xfce4 whisker popup menu in Mint XFCE:
 #bindsym $mod+Shift+d exec dmenu_run
@@ -49,10 +45,9 @@ bindsym $mod+space exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 #Multimedia controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #Volume up
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #Volume up
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle #Mute/Unmute
-
+bindsym XF86AudioRaiseVolume    exec --no-startup-id "/home/ayden/bin/pavolume +5%"
+bindsym XF86AudioLowerVolume    exec --no-startup-id "/home/ayden/bin/pavolume -5%" 
+bindsym XF86AudioMute           exec --no-startup-id "/home/ayden/bin/pavolume toggle" 
 #Make media keys control spotify
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
@@ -60,11 +55,12 @@ bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 
 
 
+# Never gonna use the jkl; keys to change focus, using l for lock instead
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -73,10 +69,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -179,6 +175,18 @@ bindsym $mod+r mode "resize"
 #
 # exec runs once on startup of i3
 # exec_always runs on startup and also everytime i3 is restarted
+
+bindsym $mod+l exec "betterlockscreen -l blur"
+
+#i3-gaps setup
+for_window [class="^.*"] border pixel 0
+smart_gaps on
+gaps inner 15 
+gaps outer 5
+
+exec --no-startup-id compton --config $HOME/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
 #exec --no-startup-id synergy
 exec_always --no-startup-id $HOME/.config/i3/polybar.sh
+
+
