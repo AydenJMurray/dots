@@ -1,4 +1,4 @@
-# Dotfiles for my setup
+# Dotfiles
 This repo mainly contains the config files for my i3, polybar and fish setups.
 
-~~stolen from~~ Based on the dotfile setup used by @jaagr, the creator of Polybar.
+~~Stolen from~~ Based on the dotfile setup used by [Michael Carlberg](https://www.github.com/jaagr), the creator of Polybar.
